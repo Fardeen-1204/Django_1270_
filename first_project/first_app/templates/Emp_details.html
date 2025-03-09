@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emp Details</title>
+</head>
+<body>
+<center>
+<h1>Employee Table</h1>
+
+<table border="2">
+    <tr>
+        <th>Id</th>
+        <th>Employee Name</th>
+        <th>Employee City</th>
+        <th>Employee Company</th>
+        <th>Actions</th>
+    </tr>
+    {%for i in details%}
+    <tr>
+        <th>{{i.id}}</th>
+        <th>{{i.emp_name}}</th>
+        <th>{{i.emp_city}}</th>
+        <th>{{i.emp_company}}</th>
+        <th>
+            <button ><a href="{%url 'emp_delete' i.id%}">Delete</a></button>
+            <button><a href="{%url 'page_update' i.id%}">Update</a></button>
+    </tr>
+    {%endfor%}
+</table>
+</center>
+</body>
+</html>
